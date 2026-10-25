@@ -85,6 +85,15 @@ Templates are in [`templates/`](templates); the same guidance is packaged as a C
 - **Fresh sessions, every time.** Long-lived agent conversations get expensive and drift; a round starts clean.
 - **NOT READY is a feature.** A failed review cost one cheap round; a bad release costs trust.
 
+## Background
+
+I came up with this independently while running my own multi-agent system: agents that checked their own
+work kept agreeing with themselves, so I gave every change a second, independent reviewer and a gate. I later
+found it matches a known pattern, which Anthropic calls *evaluator–optimizer* in
+[Building effective agents](https://www.anthropic.com/engineering/building-effective-agents), also known as
+"LLM-as-judge" and used by reviewer or critic agents in multi-agent frameworks. This repository is not a new
+idea; it is a small, practical version of one, tied to a real release gate, plus what running it for real taught me.
+
 ## How this was made
 
 Designed and operated by Basel Yasar Abdel Fattah; built with AI coding agents (Claude Code), including,
